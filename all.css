@@ -1,0 +1,345 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style-type: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrap {
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+.flex-start {
+  align-items: center;
+  justify-content: start;
+}
+.flex-end {
+  align-items: center;
+  justify-content: end;
+}
+.flex-space-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 48px;
+  line-height: 82px;
+  margin-top: 48px;
+  margin-bottom: 26px;
+  color: #333333;
+  letter-spacing: 8.75px;
+  text-align: center;
+}
+
+.new {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.new .txt {
+  padding-left: 24px;
+  width: 100%;
+  height: 48px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border-radius: 10px;
+}
+.new .save {
+  right: 0;
+  font-size: 48px;
+}
+
+.content {
+  background: #ffffff;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+.filter {
+  margin-bottom: 24px;
+}
+.filter li {
+  width: 100%;
+  border-bottom: 2px solid #efefef;
+}
+.filter li input {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 15.5px;
+  text-align: center;
+  background: none;
+  border: none;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: #333333;
+  letter-spacing: 0.7px;
+}
+.filter li input:hover {
+  border-bottom: 2px solid #333333;
+}
+.filter li input:focus {
+  border-bottom: 2px solid #333333;
+}
+
+.list {
+  padding-left: 24px;
+  position: relative;
+}
+.list .delete {
+  margin-left: 16px;
+  margin-right: 24px;
+  margin-top: 16px;
+  opacity: 0;
+}
+.list .delete:hover {
+  opacity: 1;
+}
+
+.checkbox {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 100%;
+  display: block;
+  padding-left: 44px;
+  cursor: pointer;
+}
+.checkbox span {
+  display: block;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  line-height: 1.5;
+}
+@media (max-width: 575px) {
+  .checkbox span {
+    padding-right: 1rem;
+  }
+}
+.checkbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.checkbox span::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.checkbox span::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 27%;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 0.5rem;
+  border-radius: 1px;
+  border-bottom: 3px solid #ffd370;
+  border-right: 3px solid #ffd370;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.checkbox input:checked ~ span {
+  color: #9f9a91;
+  text-decoration: line-through;
+}
+.checkbox input:checked ~ span::before {
+  border-color: transparent;
+  transform: translateY(-50%) scale(0);
+}
+.checkbox input:checked ~ span::after {
+  opacity: 1;
+}
+
+.footer {
+  justify-content: space-between;
+  padding-bottom: 32px;
+  padding-top: 24px;
+}
+.footer h5 {
+  line-height: 20px;
+  margin-left: 24px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  letter-spacing: 0.7px;
+}
+.footer input {
+  margin-right: 47px;
+  border: none;
+  background: none;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9f9a91;
+  letter-spacing: 0.7px;
+}/*# sourceMappingURL=all.css.map */

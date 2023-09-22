@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+        <link rel="stylesheet" href="all.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@700&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <title>myweb</title>
+    </head>
+    <body>
+        <div class="wrap">
+            <h1 class="title">TODO LIST</h1>
+
+            <div class="new flex pos-rel">
+                <input type="text" placeholder="新增待辦事項" class="txt" />
+                <span class="save material-icons pos-abs"> add_box </span>
+            </div>
+
+            <div class="content">
+                <ul class="filter flex">
+                    <li><input type="button" value="全部" class="allThing" /></li>
+                    <li><input type="button" value="待完成" class="undone" /></li>
+                    <li><input type="button" value="已完成" class="done" /></li>
+                </ul>
+
+                <ul class="list">
+                    <!-- <li class="flex">
+                        <label class="checkbox" for="">
+                            <input type="checkbox" id=check />
+                            <span>把冰箱發霉的檸檬拿去丟</span>
+                        </label>
+                        <a href="#" class="delete"><span class="material-icons"> clear </span></a>
+                    </li> -->
+                </ul>
+                <div class="footer flex">
+                    <h5 class="undone-item">待完成項目</h5>
+                    <!--幾個未完成項目-->
+                    <input type="button" value="清除已完成項目" />
+                </div>
+            </div>
+        </div>
+        <script src="all.js"></script>
+    </body>
+</html>

@@ -1,0 +1,212 @@
+.wrap {
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
+$default: #ffd370;
+$dark: #333;
+$gray: #9f9a91;
+$light: #efefef;
+
+// .bg {
+//     background: no-repeat linear-gradient(174deg, #ffd370 2%, #ffd370 46%, #ffffff 46%, #ffffff 100%, #e8e8e8 100%);
+// }
+.pos-abs {
+    position: absolute;
+}
+.pos-rel {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    &-center {
+        align-items: center;
+        justify-content: center;
+    }
+    &-start {
+        align-items: center;
+        justify-content: start;
+    }
+    &-end {
+        align-items: center;
+        justify-content: end;
+    }
+    &-space-between {
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.title {
+    font-family: "Baloo Tamma 2", cursive;
+    font-size: 48px;
+    line-height: 82px;
+    margin-top: 48px;
+    margin-bottom: 26px;
+    color: #333333;
+    letter-spacing: 8.75px;
+    text-align: center;
+}
+
+.new {
+    width: 100%;
+    margin-bottom: 8px;
+    .txt {
+        padding-left: 24px;
+        width: 100%;
+        height: 48px;
+        background: #ffffff;
+        border: none;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        border-radius: 10px;
+    }
+    .save {
+        right: 0;
+        font-size: 48px;
+    }
+}
+
+.content {
+    background: #ffffff;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border-radius: 10px;
+}
+
+.filter {
+    margin-bottom: 24px;
+    li {
+        width: 100%;
+        border-bottom: 2px solid #efefef;
+        input {
+            width: 100%;
+            padding-top: 16px;
+            padding-bottom: 15.5px;
+            text-align: center;
+            background: none;
+            border: none;
+            font-family: "Noto Sans TC", sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: 0.7px;
+            &:hover {
+                border-bottom: 2px solid #333333;
+            }
+            &:focus {
+                border-bottom: 2px solid #333333;
+            }
+        }
+    }
+}
+
+.list {
+    padding-left: 24px;
+    position: relative;
+    .delete {
+        margin-left: 16px;
+        margin-right: 24px;
+        margin-top: 16px;
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.checkbox {
+    position: relative;
+    user-select: none;
+    width: 100%;
+    display: block;
+    padding-left: 44px;
+    cursor: pointer;
+    span {
+        display: block;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        line-height: 1.5;
+        @media (max-width: 575px) {
+            padding-right: 1rem;
+        }
+    }
+    input {
+        //width 100% 用label將範圍整個壟罩使除了刪除鍵之外的區域可以整個都可以點選
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+        display: block;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+    span::before {
+        //做一個框來替代checkbox input
+        content: ""; //偽元素
+        position: absolute;
+        left: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+        height: 20px;
+        width: 20px;
+        border-radius: 5px;
+        border: 1px solid $dark;
+        pointer-events: none;
+        transition: 0.3s ease;
+    }
+    span::after {
+        //做出一個勾勾來在checked後換成打勾
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 27%;
+        transform: rotate(45deg); //轉角度使右邊與下邊的邊框變成一個勾勾樣
+        height: 15px; //透過長寬來使勾勾具有長短的邊
+        width: 0.5rem;
+        border-radius: 1px;
+        border-bottom: 3px solid $default;
+        border-right: 3px solid $default;
+        pointer-events: none;
+        opacity: 0; //一開始勾勾不會被看到但他仍存在在此區域等待:checked
+        transition: 0.3s ease;
+    }
+    input:checked {
+        ~ span {
+            //當被:checked後字變灰 帶有刪除線
+            color: $gray;
+            text-decoration: line-through;
+        }
+        ~ span::before {
+            border-color: transparent;
+            //default border color (none)
+            transform: translateY(-50%) scale(0); //縮小至沒有
+        }
+        ~ span::after {
+            opacity: 1; //讓勾勾顯現
+        }
+    }
+}
+
+.footer {
+    justify-content: space-between;
+    padding-bottom: 32px;
+    padding-top: 24px;
+    h5 {
+        line-height: 20px;
+        margin-left: 24px;
+        @include Noto-font-size(14px, 400, #333333);
+        letter-spacing: 0.7px;
+    }
+    input {
+        margin-right: 47px;
+        border: none;
+        background: none;
+        @include Noto-font-size(14px, 400, #9f9a91);
+        letter-spacing: 0.7px;
+    }
+}

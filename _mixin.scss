@@ -1,0 +1,13 @@
+@mixin Noto-font-size($size, $weight, $color) {
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin margin($top, $bottom, $left, $right) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+    margin-left: $left;
+    margin-right: $right;
+}
