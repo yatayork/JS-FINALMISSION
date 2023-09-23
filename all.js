@@ -189,12 +189,12 @@ footer.addEventListener("click", function (e) {
     if (e.target.getAttribute("class") !== "clearCheck") {
         return;
     }
-    data.forEach(function (item, index) {
-        if (item.checked == "true") {
-            console.log("刪除");
-            console.log(index);
-            data.splice(index, 1);
-        }
+    data.forEach(function (item) {
+        const out_data = data.findIndex(function (item, index) {
+            return item.checked == "true";
+        });
+        data.splice(out_data, 1);
     });
+
     renderData();
 });
