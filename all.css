@@ -141,6 +141,10 @@ table {
   margin: 0 auto;
 }
 
+.bg {
+  background: no-repeat linear-gradient(174deg, #ffd370 2%, #ffd370 46%, #ffffff 46%, #ffffff 100%, #e8e8e8 100%);
+}
+
 .pos-abs {
   position: absolute;
 }
